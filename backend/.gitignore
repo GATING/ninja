@@ -195,9 +195,3 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,macos,linux
 
 ql
-
-node_modules
-.DS_Store
-dist
-dist-ssr
-*.local
