@@ -161,7 +161,7 @@ router.post("/api/code", body(), async (ctx) => {
     if (err_msg) {
       ctx.body = {
         code: 999,
-        data: null,
+        data: {},
         message: `验证码发送失败 ${err_msg}`,
       };
     } else {
@@ -174,7 +174,7 @@ router.post("/api/code", body(), async (ctx) => {
   } else {
     ctx.body = {
       code: 998,
-      data: null,
+      data: {},
       message: `请输入正确的手机号`,
     };
   }
@@ -185,7 +185,7 @@ router.post("/api/login", body(), async (ctx) => {
   if (!/^1\d{10}$/.test(mobile)) {
     ctx.body = {
       code: 998,
-      data: null,
+      data: {},
       message: `请输入正确的手机号`,
     };
     return;
@@ -193,7 +193,7 @@ router.post("/api/login", body(), async (ctx) => {
   if (!smscode?.trim()) {
     ctx.body = {
       code: 998,
-      data: null,
+      data: {},
       message: `验证码不能为空`,
     };
     return;
@@ -203,7 +203,7 @@ router.post("/api/login", body(), async (ctx) => {
   if (err_msg) {
     ctx.body = {
       code: 999,
-      data: null,
+      data: {},
       message: `登录失败 ${err_msg}`,
     };
   } else {
