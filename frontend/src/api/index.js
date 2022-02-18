@@ -51,3 +51,11 @@ export function WSCKDelaccountAPI(body) {
 export function remarkupdateWSCKAPI(body) {
   return api.post('updateWSCK/remark', { json: body }).json()
 }
+
+export function sendCodeAPI(body) {
+  return api.post('code', { json: body }).json()
+}
+
+export function loginAPI(body) {
+  return api.post('login', { json: body }).json()
+}
