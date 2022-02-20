@@ -393,12 +393,12 @@ export default {
         ...data.loginForm,
         ck: sessionStorage.getItem('ck'),
       })
-      if (resp.code == 200) {
+      if (resp.data.eid) {
         localStorage.setItem('eid', resp.data.eid)
         ElMessage.success(resp.message)
         router.push('/')
       } else {
-        ElMessage.error(resp.message)
+        ElMessage.error(resp.message || 'cookie 解析失败，请检查后重试！')
       }
     }
 
