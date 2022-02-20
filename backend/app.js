@@ -201,7 +201,7 @@ router.post("/api/login", body(), async (ctx) => {
 
   const {
     err_msg,
-    data: { pt_key, pt_pin },
+    data: _data,
   } = await login(mobile, smscode, ck);
 
   if (err_msg) {
@@ -211,7 +211,7 @@ router.post("/api/login", body(), async (ctx) => {
       message: `登录失败 ${err_msg}`,
     };
   } else {
-    
+    const { pt_key, pt_pin } = _data
     const user = new User({ pt_key, pt_pin });
     const data = await user.CKLogin();
     ctx.body = { data };
